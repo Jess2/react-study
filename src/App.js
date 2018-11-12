@@ -1,6 +1,7 @@
 // 리액트와 그 내부의 컴포넌트를 불러온다.
 import React, { Component, Fragment } from 'react';
 import './App.css';
+import MyName from './MyName';
 
 // 클래스를 통해 컴포넌트를 만들 수 있다.
 // 클래스 형태로 만들어진 컴포넌트에는 render함수가 있어야 한다.
@@ -68,6 +69,8 @@ class App extends Component {
         <div className="myClass">
           클래스로 스타일을 적용해봐요
         </div>
+
+        <MyName name='제시'></MyName>
       </Fragment>
     );
   }
