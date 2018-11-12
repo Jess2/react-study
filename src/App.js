@@ -1,8 +1,8 @@
 // 리액트와 그 내부의 컴포넌트를 불러온다.
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import MyName from './MyName';
-import Counter from './Counter';
+import MyName from './components/MyName';
+import Counter from './components/Counter';
 
 // 클래스를 통해 컴포넌트를 만들 수 있다.
 // 클래스 형태로 만들어진 컴포넌트에는 render함수가 있어야 한다.
