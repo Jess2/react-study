@@ -5,15 +5,30 @@ class Counter extends Component {
   state = {
     number: 0
   }
+//   handleIncrease = () => {
+//     // setState가 호출되면 컴포넌트가 리렌더링된다
+//     this.setState({
+//       number: this.state.number + 1
+//     });
+//   }
   handleIncrease = () => {
-    this.setState({
-      number: this.state.number + 1
-    });
+    this.setState(
+      ({ number }) => ({
+          number: number + 1
+      })
+    );
   }
+//   handleDecrease = () => {
+//     this.setState({
+//       number: this.state.number - 1
+//     });
+//   }
   handleDecrease = () => {
-    this.setState({
-      number: this.state.number - 1
-    });
+    this.setState(
+      ({number}) => ({
+          number: number - 1
+      })
+    );
   }
   render() {
     return (
