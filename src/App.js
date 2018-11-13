@@ -31,6 +31,23 @@ class App extends Component {
       information: information.concat({id: this.id++, ...data})
     })
   }
+  handleRemove = (id) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.filter(info => info.id !== id)
+    })
+  }
+  handleUpdate = (id, data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(
+        info => id === info.id
+          // 새 객체를 만들어서 기존으 ㅣ값과 전달받은 data를 덮어씀
+          ? { ...info, ...data }
+          : info
+      )
+    })
+  }
   render() {
     // 변수
     const name = 'Jess2';
@@ -94,10 +111,14 @@ class App extends Component {
           클래스로 스타일을 적용해봐요
         </div>
 
-        <MyName name='제시'></MyName>
-        <Counter></Counter>
-        <PhoneForm onCreate={this.handleCreate}></PhoneForm>
-        <PhoneInfoList data={this.state.information}></PhoneInfoList>
+        <MyName name='제시'/>
+        <Counter/>
+        <PhoneForm onCreate={this.handleCreate}/>
+        <PhoneInfoList
+          data={this.state.information}
+          onRemove={this.handleRemove}
+          onUpdate={this.handleUpdate}
+        />
       </Fragment>
     );
   }
