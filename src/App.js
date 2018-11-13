@@ -42,7 +42,7 @@ class App extends Component {
     this.setState({
       information: information.map(
         info => id === info.id
-          // 새 객체를 만들어서 기존으 ㅣ값과 전달받은 data를 덮어씀
+          // 새 객체를 만들어서 기존의 값과 전달받은 data를 덮어씀
           ? { ...info, ...data }
           : info
       )

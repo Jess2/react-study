@@ -9,7 +9,9 @@ class PhoneInfo extends Component {
     }
   }
   state = {
+    // 수정버튼 눌렀을 때 editing 값을 true로 설정한다.
     editing: false,
+    // input 값을 담기 위해 각 필드를 위한 값
     name: '',
     phone: '',
   }
@@ -28,14 +30,17 @@ class PhoneInfo extends Component {
       [name]: value
     });
   }
+  // editing 값이 바뀔 때 처리할 로직
   componentDidUpdate(prevProps, prevState) {
     const { info, onUpdate } = this.props;
+    // editing 값이 false -> true로 전환될 때 info의 값을 state에 넣어줌
     if(!prevState.editing && this.state.editing) {
       this.setState({
         name: info.name,
         phone: info.phone
       })
     }
+    // editing 값이 true -> false로 전환될 때 onUpdate 함수 호출
     if(prevState.editing && !this.state.editing) {
       onUpdate(info.id, {
         name: this.state.name,
@@ -77,6 +82,7 @@ class PhoneInfo extends Component {
         </Fragment>
       );
     }
+    // 일반모드
     const {
       name, phone, id
     } = this.props.info;
