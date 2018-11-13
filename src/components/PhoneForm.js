@@ -13,13 +13,21 @@ class PhoneForm extends Component {
   handleSubmit = (e) => {
     // 페이지 리로딩 방지
     e.preventDefault();
-    // props로 받은 onCreate 함수를 호출
-    this.props.onCreate(this.state);
-    // 상태 초기화
-    this.setState({
-      name: '',
-      phone: ''
-    })
+    if (this.state.name !== '' && this.state.phone !== '') {
+      // props로 받은 onCreate 함수를 호출
+      this.props.onCreate(this.state);
+      // 상태 초기화
+      this.setState({
+        name: '',
+        phone: ''
+      })
+    } else if (this.state.name === '' && this.state.phone !== '') {
+      alert('이름을 입력하세요');
+    } else if (this.state.name !== '' && this.state.phone === '') {
+      alert('전화번호를 입력하세요');
+    } else {
+      alert('이름과 전화번호를 입력하세요');
+    }
   }
   render() {
     return (
