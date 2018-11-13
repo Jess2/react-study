@@ -1,15 +1,13 @@
-import React, { Component, Fragment } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-class App extends Component {
+import React, { Component } from 'react';
+import TodoListTemplate from './components/TodoListTemplate';
+import Form from './components/Form';
+import TodoItemList from './components/TodoItemList';
+export default class App extends Component {
   render() {
     return (
-      <Fragment>
-        App
-      </Fragment>
+      <TodoListTemplate form={<Form/>}>
+        <TodoItemList/>
+      </TodoListTemplate>
     );
   }
 }
-
-export default App;

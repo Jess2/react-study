@@ -1,6 +1,5 @@
 // 리액트와 그 내부의 컴포넌트를 불러온다.
 import React, { Component, Fragment } from 'react';
-import './App.css';
 import MyName from './components/MyName';
 import Counter from './components/Counter';
 import PhoneForm from './components/PhoneForm';
