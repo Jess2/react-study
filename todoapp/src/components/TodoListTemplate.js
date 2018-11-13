@@ -13,7 +13,8 @@ const TodoListTemplate = ({form, children}) => {
         {form}
       </section>
       <section className="todos-wrapper">
-        {children}
+        {/* TodoItemList */}
+        {children} 
       </section>
     </main>
   );
