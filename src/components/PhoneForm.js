@@ -40,14 +40,14 @@ class PhoneForm extends Component {
             value={this.state.name}
             onChange={this.handleChange}
             name="name"
-            autocomplete="off"
+            autoComplete="off"
           />
           <input
             placeholder="전화번호"
             value={this.state.phone}
             onChange={this.handleChange}
             name="phone"
-            autocomplete="off"
+            autoComplete="off"
           />
           <div>name is {this.state.name}</div>
           <div>phone number is {this.state.phone}</div>

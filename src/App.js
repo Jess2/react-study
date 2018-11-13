@@ -23,7 +23,8 @@ class App extends Component {
         name: '홍길동',
         phone: '010-3333-3333'
       }
-    ]
+    ],
+    keyword: ''
   }
   handleCreate = (data) => {
     const { information } = this.state;
@@ -48,6 +49,11 @@ class App extends Component {
       )
     })
   }
+  handleChange = (e) => {
+    this.setState({
+      keyword: e.target.value,
+    });
+  }
   render() {
     // 변수
     const name = 'Jess2';
@@ -65,6 +71,11 @@ class App extends Component {
       fontSize: '30px',
       color: 'white'
     }
+
+    const { information, keyword } = this.state;
+    const filteredList = information.filter(
+      info => info.name.indexOf(keyword) !== -1
+    );
 
     return (
       <Fragment>
@@ -114,8 +125,15 @@ class App extends Component {
         <MyName name='제시'/>
         <Counter/>
         <PhoneForm onCreate={this.handleCreate}/>
+        <p>
+          <input
+            placeholder="검색할 이름을 입력하세요"
+            onChange={this.handleChange}
+            value={keyword}
+          />
+        </p>
         <PhoneInfoList
-          data={this.state.information}
+          data={filteredList}
           onRemove={this.handleRemove}
           onUpdate={this.handleUpdate}
         />
