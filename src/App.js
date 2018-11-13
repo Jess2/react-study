@@ -3,11 +3,34 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import MyName from './components/MyName';
 import Counter from './components/Counter';
+import PhoneForm from './components/PhoneForm';
+import PhoneInfoList from './components/PhoneInfoList';
 
 // 클래스를 통해 컴포넌트를 만들 수 있다.
 // 클래스 형태로 만들어진 컴포넌트에는 render함수가 있어야 한다.
 // JSX를 return 해주어야 한다.
 class App extends Component {
+  id = 2
+  state = {
+    information: [
+      {
+        id: 0,
+        name: '제시',
+        phone: '010-0000-0000'
+      },
+      {
+        id: 1,
+        name: '홍길동',
+        phone: '010-3333-3333'
+      }
+    ]
+  }
+  handleCreate = (data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.concat({id: this.id++, ...data})
+    })
+  }
   render() {
     // 변수
     const name = 'Jess2';
@@ -73,6 +96,8 @@ class App extends Component {
 
         <MyName name='제시'></MyName>
         <Counter></Counter>
+        <PhoneForm onCreate={this.handleCreate}></PhoneForm>
+        <PhoneInfoList data={this.state.information}></PhoneInfoList>
       </Fragment>
     );
   }
