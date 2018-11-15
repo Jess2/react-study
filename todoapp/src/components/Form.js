@@ -1,4 +1,5 @@
 import React from 'react';
+// input과 button이 담겨있는 컴포넌트
 import './Form.css';
 
 // 함수형 컴포넌트

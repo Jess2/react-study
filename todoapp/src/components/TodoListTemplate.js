@@ -1,3 +1,4 @@
+// 틀 컴포넌트
 import React from 'react';
 import './TodoListTemplate.css';
 
@@ -10,11 +11,12 @@ const TodoListTemplate = ({form, children}) => {
         오늘 할 일
       </div>
       <section className="form-wrapper">
+        {/* Form 컴포넌트가 들어갈 자리 */}
         {form}
       </section>
       <section className="todos-wrapper">
-        {/* TodoItemList */}
-        {children} 
+        {/* TodoItemList 컴포넌트가 들어갈 자리*/}
+        {children}
       </section>
     </main>
   );

@@ -7,16 +7,18 @@ export default class App extends Component {
   state = {
     input: '',
     todos: [
-      { id: 0, text: '리액트 소개', checked: false },
-      { id: 1, text: '리액트 소개', checked: true },
-      { id: 2, text: '리액트 소개', checked: false },
+      { id: 0, text: '리액트 공부하기', checked: false },
+      { id: 1, text: '출근하기', checked: true },
+      { id: 2, text: '운동하기', checked: false },
     ]
   }
+  // 할 일 input창에 사용자 입력값 변경
   handleChange = (e) => {
     this.setState({
       input: e.target.value // input의 다음 바뀔 값
     });
   }
+  // 새로운 할 일 추가
   handleCreate = () => {
     const { input, todos } = this.state;
     this.setState({
@@ -35,24 +37,26 @@ export default class App extends Component {
       this.handleCreate();
     }
   }
+  // 할 일 체크 활성화/비활성화
   handleToggle = (id) => {
     const { todos } = this.state;
 
     // 파라미터로 받은 id를 가지고 몇번째 아이템인지 찾는다.
     const index = todos.findIndex(todo => todo.id === id);
-    const selected = todos[index]; // 선택한 객체
+    const selectedTodo = todos[index]; // 선택한 객체
     const nextTodos = [...todos]; // 배열을 복사
 
     // 기존의 값들을 복사하고, checked 값을 덮어쓰기
     nextTodos[index] = {
-      ...selected,
-      checked: !selected.checked
+      ...selectedTodo,
+      checked: !selectedTodo.checked
     };
 
     this.setState({
       todos: nextTodos
     });
   }
+  // 할 일 제거
   handleRemove = (id) => {
     const { todos } = this.state;
     this.setState({
