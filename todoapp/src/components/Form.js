@@ -4,13 +4,14 @@ import './Form.css';
 
 // 함수형 컴포넌트
 // 파라미터로 받게되는 것이 props
-const Form = ({value, onChange, onCreate, onKeyPress}) => {
+const Form = ({value, onChange, onCreate, onKeyPress, color}) => {
   return (
     <div className="form">
       <input
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        style={{color}}
       />
       <div className="create-button" onClick={onCreate}>
         추가

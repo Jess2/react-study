@@ -8,8 +8,7 @@ export default class TodoItem extends Component {
   }
 
   render() {
-    const { text, checked, id, onToggle, onRemove } = this.props;
-    console.log(id);
+    const { text, checked, id, onToggle, onRemove, color } = this.props;
     return (
       // 리스트 하나를 클릭하면 onToggle 메소드 실행
       <div className="todo-item" onClick={() => onToggle(id)}>
@@ -19,7 +18,7 @@ export default class TodoItem extends Component {
           onRemove(id)}
         }>&times;</div>
 
-        <div className={`todo-text ${checked && 'checked'}`}>
+        <div style={{color}} className={`todo-text ${checked && 'checked'}`}>
           <div>{text}</div>
         </div>
 

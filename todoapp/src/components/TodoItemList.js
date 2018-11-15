@@ -10,7 +10,7 @@ export default class TodoItemList extends Component {
   }
 
   render() {
-    const { todos, onToggle, onRemove } = this.props;
+    const { todos, onToggle, onRemove, color } = this.props;
     const todoList = todos.map(
       // ({id, text, checked}) => (
       (todo) => (
@@ -21,6 +21,7 @@ export default class TodoItemList extends Component {
           {...todo}
           onToggle={onToggle}
           onRemove={onRemove}
+          color={color}
           // key={id}
           key={todo.id}
         />

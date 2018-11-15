@@ -4,11 +4,15 @@ import './TodoListTemplate.css';
 
 // 함수형 컴포넌트
 // 파라미터로 받게되는 것이 props
-const TodoListTemplate = ({form, children}) => {
+const TodoListTemplate = ({form, palette, children}) => {
   return (
     <main className="todo-list-template">
       <div className="title">
         오늘 할 일
+      </div>
+      <div className="palette">
+        {/* Palette 컴포넌트가 들어갈 자리 */}
+        {palette}
       </div>
       <section className="form-wrapper">
         {/* Form 컴포넌트가 들어갈 자리 */}
