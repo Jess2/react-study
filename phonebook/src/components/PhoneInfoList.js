@@ -3,10 +3,20 @@ import PhoneInfo from './PhoneInfo';
 
 export default class PhoneInfoList extends Component {
   render() {
+    const { data, onRemove, onUpdate } = this.props;
+    const list = data.map(
+      info => (
+        <PhoneInfo
+          key={info.id}
+          info={info}
+          onRemove={onRemove}
+          onUpdate={onUpdate}
+        />
+      )
+    );
     return (
       <Fragment>
-        리스트
-        <PhoneInfo/>
+        {list}
       </Fragment>
     );
   }
