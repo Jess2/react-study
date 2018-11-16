@@ -1,0 +1,28 @@
+.PhoneInfo {
+  background: white;
+  width: 310px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+
+  button {
+    border: none;
+    background: rgb(255, 200, 200);
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px 5px 0 5px;
+    font-weight: bold;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+.PhoneInfoEdit {
+  background: white;
+  width: 310px;
+  margin: 0 auto;
+  padding: 10px 0;
+}

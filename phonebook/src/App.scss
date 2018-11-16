@@ -1,0 +1,43 @@
+.AppWrapper {
+  position: relative;
+  
+  .App {
+    position: absolute;
+    left:0;
+    right:0;
+    width: 500px;
+    margin: 50px auto;
+    background: rgb(180, 66, 66);
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 20px;
+  
+    h1 {
+      color: white;
+      margin-top: 0;
+    }
+
+    input:focus, button:focus {
+      outline: none;
+    }
+
+    .search {
+      margin: 10px 0;
+
+      hr {
+        margin: 20px 0;
+      }
+
+      input {
+        width: 300px;
+        height: 30px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+
+

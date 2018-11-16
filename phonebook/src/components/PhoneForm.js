@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-
+import React, { Component } from 'react';
+import './PhoneForm.scss'
 export default class PhoneForm extends Component {
   state = {
     name: '',
@@ -20,25 +20,39 @@ export default class PhoneForm extends Component {
   }
   render() {
     return (
-      <Fragment>
+      <div className="PhoneForm">
         <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="이름"
-            value={this.state.name}
-            onChange={this.handleChange}
-            name="name"
-            autoComplete="off"
-          />
-          <input
-            placeholder="전화번호"
-            value={this.state.phone}
-            onChange={this.handleChange}
-            name="phone"
-            autoComplete="off"
-          />
-          <button type="submit">등록</button>
+          <table>
+            <tr>
+              <td>
+                <input
+                  placeholder="이름"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  name="name"
+                  autoComplete="off"
+                  tabindex="1"
+                />
+              </td>
+              <td rowSpan="2">
+                <button type="submit">등록</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  placeholder="전화번호"
+                  value={this.state.phone}
+                  onChange={this.handleChange}
+                  name="phone"
+                  autoComplete="off"
+                  tabindex="2"
+                />
+              </td>
+            </tr>
+          </table>
         </form>
-      </Fragment>
+      </div>
     );
   }
 }

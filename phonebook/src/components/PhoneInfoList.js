@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PhoneInfo from './PhoneInfo';
-
+import './PhoneInfoList.scss'
 export default class PhoneInfoList extends Component {
   render() {
     const { data, onRemove, onUpdate } = this.props;
@@ -15,9 +15,9 @@ export default class PhoneInfoList extends Component {
       )
     );
     return (
-      <Fragment>
+      <div className="PhoneInfoList">
         {list}
-      </Fragment>
+      </div>
     );
   }
 }

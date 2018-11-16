@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import './PhoneInfo.scss';
 export default class PhoneInfo extends Component {
   state = {
     editing: false,
@@ -45,7 +45,7 @@ export default class PhoneInfo extends Component {
 
     if (editing) {
       return (
-        <Fragment>
+        <div className="PhoneInfoEdit">
           <div>
             <input
               value={this.state.name}
@@ -64,18 +64,17 @@ export default class PhoneInfo extends Component {
           </div>
           <button onClick={this.phoneEdit}>적용</button>
           <button onClick={this.phoneDelete}>삭제</button>
-        </Fragment>
+        </div>
       )
     }
 
     return (
-      <Fragment>
-        <div>id: {id}</div>
+      <div className="PhoneInfo">
         <div>이름: {name}</div>
         <div>전화번호: {phone}</div>
         <button onClick={this.phoneEdit}>수정</button>
         <button onClick={this.phoneDelete}>삭제</button>
-      </Fragment>
+      </div>
     );
   }
 }

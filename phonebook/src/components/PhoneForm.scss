@@ -1,0 +1,45 @@
+.PhoneForm {
+  /* background: white; */
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  td {
+    padding: 0;
+  }
+
+  input {
+    width: calc(100% - 10px);
+    height: 29.5px;
+    border: none;
+    margin: 0;
+    padding-left: 10px;
+    border-bottom: 1px solid gray;
+  }
+
+  tr:first-child input {
+    border-radius: 10px 0 0 0;
+  }
+
+  tr:nth-child(2) input {
+    border-radius: 0 0 0 10px;
+  }
+
+  button {
+    width: 50px;
+    background: rgb(255, 200, 200);
+    border: none;
+    height: 65.4px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    font-weight: bold;
+    border-radius: 0 10px 10px 0;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
