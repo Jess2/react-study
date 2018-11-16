@@ -71,6 +71,11 @@ class App extends Component {
       color: 'white'
     }
 
+    const basicStyle = {
+      background: 'black',
+      color: 'white'
+    }
+
     const { information, keyword } = this.state;
     const filteredList = information.filter(
       info => info.name.indexOf(keyword) !== -1
@@ -90,7 +95,7 @@ class App extends Component {
 
         {/* 조건부 렌더링 - 삼항연산자 */}
         {
-          1 + 1 === 2
+          1 + 1 === 3
             ? (<div>맞아요!</div>)
             : (<div>틀려요!</div>)
         }
@@ -122,7 +127,11 @@ class App extends Component {
         </div>
 
         <MyName name='제시'/>
-        <Counter/>
+
+        {/* 카운터 */}
+        <Counter style={basicStyle}/>
+
+        {/* 전화번호부 */}
         <PhoneForm onCreate={this.handleCreate}/>
         <p>
           <input

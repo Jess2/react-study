@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PhoneInfo from './PhoneInfo';
 
 class PhoneInfoList extends Component {
-  static defaultPRops = {
+  static defaultProps = {
     data: [],
     onRemove: () => console.warn('onRemove not defined'),
     onUpdate: () => console.warn('onUpdate not defined'),
@@ -13,8 +13,10 @@ class PhoneInfoList extends Component {
     return nextProps.data !== this.props.data;
   }
   render() {
-    console.log('render PhoneInfoList')
     const { data, onRemove, onUpdate } = this.props;
+    const basicStyle = {
+      background: 'yellow'
+    }
     // 배열을 렌더링할 때 꼭 고유의 key를 사용해야 한다
     const list = data.map(
       info => (
@@ -28,7 +30,7 @@ class PhoneInfoList extends Component {
     );
     return (
       <Fragment>
-        <div>
+        <div style={basicStyle}>
           {list}
         </div>
       </Fragment>

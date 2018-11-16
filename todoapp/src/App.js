@@ -101,7 +101,6 @@ export default class App extends Component {
           todos={todos}
           onToggle={handleToggle}
           onRemove={handleRemove}
-          color={color}
         />
       </TodoListTemplate>
     );

@@ -59,7 +59,6 @@ class PhoneInfo extends Component {
     return true;
   }
   render() {
-    console.log('render PhoneInfo ' + this.props.info.id);
     const myStyle = {
       border: '1px solid black',
       padding: '8px',
