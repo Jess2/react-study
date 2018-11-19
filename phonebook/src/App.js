@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList';
 import './App.scss';
+
 class App extends Component {
   id = 1;
   state = {
@@ -61,7 +62,7 @@ class App extends Component {
             data={filteredList}
             onRemove={this.phoneRemove}
             onUpdate={this.phoneUpdate}
-            />
+          />
         </div>
       </div>
     );
