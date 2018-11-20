@@ -7,43 +7,36 @@ export default class PhoneInfo extends Component {
     phone: ''
   }
   phoneEdit = () => {
-    const { editing } = this.state;
     this.setState({
-      editing: !editing
+      editing: !this.state.editing
     });
   }
   phoneDelete = () => {
-    const { info, onRemove } = this.props;
-    onRemove(info.id);
+    this.props.onRemove(this.props.info.id);
   }
   phoneChange = (e) => {
-    const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [e.target.name]: e.target.value
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    const { info, onUpdate } = this.props;
     // editing: false -> true
     if (!prevState.editing && this.state.editing) {
       this.setState({
-        name: info.name,
-        phone: info.phone
+        name: this.props.info.name,
+        phone: this.props.info.phone
       })
     }
     // editing: true -> false
     if (prevState.editing && !this.state.editing) {
-      onUpdate(info.id, {
+      this.props.onUpdate(this.props.info.id, {
         name: this.state.name,
         phone: this.state.phone
       })
     }
   }
   render() {
-    const { editing } = this.state;
-    const { name, phone, id } = this.props.info;
-
-    if (editing) {
+    if (this.state.editing) {
       return (
         <div className="PhoneInfoEdit">
           <div>
@@ -70,8 +63,8 @@ export default class PhoneInfo extends Component {
 
     return (
       <div className="PhoneInfo">
-        <div>이름: {name}</div>
-        <div>전화번호: {phone}</div>
+        <div>이름: {this.props.info.name}</div>
+        <div>전화번호: {this.props.info.phone}</div>
         <button onClick={this.phoneEdit}>수정</button>
         <button onClick={this.phoneDelete}>삭제</button>
       </div>

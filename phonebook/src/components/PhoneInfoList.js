@@ -3,14 +3,13 @@ import PhoneInfo from './PhoneInfo';
 import './PhoneInfoList.scss'
 export default class PhoneInfoList extends Component {
   render() {
-    const { data, onRemove, onUpdate } = this.props;
-    const list = data.map(
+    const list = this.props.data.map(
       info => (
         <PhoneInfo
           key={info.id}
           info={info}
-          onRemove={onRemove}
-          onUpdate={onUpdate}
+          onRemove={this.props.onRemove}
+          onUpdate={this.props.onUpdate}
         />
       )
     );

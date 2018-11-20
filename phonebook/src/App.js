@@ -16,21 +16,18 @@ class App extends Component {
     keyword: ''
   }
   phoneCreate = (data) => {
-    const { information } = this.state;
     this.setState({
-      information: information.concat({id: this.id++, ...data})
+      information: this.state.information.concat({id: this.id++, ...data})
     });
   }
   phoneRemove = (id) => {
-    const { information } = this.state;
     this.setState({
-      information: information.filter(info => info.id !== id)
+      information: this.state.information.filter(info => info.id !== id)
     });
   }
   phoneUpdate = (id, data) => {
-    const { information } = this.state;
     this.setState({
-      information: information.map(
+      information: this.state.information.map(
         info => id === info.id ? { ...info, ...data } : info
       )
     });
@@ -41,9 +38,8 @@ class App extends Component {
     });
   }
   render() {
-    const { information, keyword } = this.state;
-    const filteredList = information.filter(
-      info => info.name.indexOf(keyword) !== -1
+    const filteredList = this.state.information.filter(
+      info => info.name.indexOf(this.state.keyword) !== -1
     );
     return (
       <div className="AppWrapper">
@@ -51,12 +47,12 @@ class App extends Component {
           <h1>전화번호부</h1>
           <PhoneForm onCreate={this.phoneCreate}/>
           <div className="search">
-          <hr/>
+            <hr/>
             <input
               placeholder="Search"
               onChange={this.searchChange}
-              value={keyword}
-              />
+              value={this.state.keyword}
+            />
           </div>
           <PhoneInfoList
             data={filteredList}

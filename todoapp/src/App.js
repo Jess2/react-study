@@ -96,7 +96,8 @@ export default class App extends Component {
         )}
         palette={(
           <Palette colors={colors} selected={color} onSelect={handleSelectColor}/>
-        )}>
+        )}
+      >
         <TodoItemList
           todos={todos}
           onToggle={handleToggle}
