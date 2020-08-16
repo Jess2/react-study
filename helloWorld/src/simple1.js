@@ -44,7 +44,6 @@ function Container() {
   );
 }
 
-
 // html에서 만들었던 div 안에 렌더링을 하기 위해서 엘러먼트를 선택자로 가져온다.
 const DOM_CONTAINER = document.getElementById('root');
 
