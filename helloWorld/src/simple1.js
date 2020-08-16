@@ -19,14 +19,19 @@ function LikeButton() {
   )
 }
 // html에서 만들었던 div 안에 렌더링을 하기 위해서 엘러먼트를 선택자로 가져온다.
-const DOM_CONTAINER1 = document.getElementById('root1');
+const DOM_CONTAINER = document.getElementById('root');
 
 // ReactDOM 변수는 react-dom.development.js 파일이 실행될 때 전역변수로 노출된다.
 // 컴포넌트를 렌더링할 때도 '리액트 요소'로 만들어 준다.
-ReactDOM.render(React.createElement(LikeButton), DOM_CONTAINER1);
+ReactDOM.render(React.createElement(LikeButton), DOM_CONTAINER);
 
-// 각각의 상태값을 갖고 있는 컴포넌트가 렌더링 된다.
-const DOM_CONTAINER2 = document.getElementById('root2');
-ReactDOM.render(React.createElement(LikeButton), DOM_CONTAINER2);
-const DOM_CONTAINER3 = document.getElementById('root3');
-ReactDOM.render(React.createElement(LikeButton), DOM_CONTAINER3);
+ReactDOM.render(
+  React.createElement(
+    'div',
+    null,
+    React.createElement(LikeButton),
+    React.createElement(LikeButton),
+    React.createElement(LikeButton),
+  ),
+  DOM_CONTAINER,
+);
