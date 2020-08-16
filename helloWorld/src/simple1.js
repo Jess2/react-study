@@ -18,20 +18,36 @@ function LikeButton() {
     text, // children. button 의 children 으로 text 를 출력
   )
 }
+
+function Container() {
+  const [count, setCount] = React.useState(0);
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(LikeButton),
+    React.createElement(
+      'div',
+      { style: { marginTop: 20 } },
+      React.createElement('span', null, '현재 카운트: '),
+      React.createElement('span', { style: { marginRight: 10 } }, count),
+      React.createElement(
+        'button',
+        { onClick: () => setCount(count + 1) },
+        '증가',
+      ),
+      React.createElement(
+        'button',
+        { onClick: () => setCount(count - 1) },
+        '감소',
+      ),
+    ),
+  );
+}
+
+
 // html에서 만들었던 div 안에 렌더링을 하기 위해서 엘러먼트를 선택자로 가져온다.
 const DOM_CONTAINER = document.getElementById('root');
 
 // ReactDOM 변수는 react-dom.development.js 파일이 실행될 때 전역변수로 노출된다.
 // 컴포넌트를 렌더링할 때도 '리액트 요소'로 만들어 준다.
-ReactDOM.render(React.createElement(LikeButton), DOM_CONTAINER);
-
-ReactDOM.render(
-  React.createElement(
-    'div',
-    null,
-    React.createElement(LikeButton),
-    React.createElement(LikeButton),
-    React.createElement(LikeButton),
-  ),
-  DOM_CONTAINER,
-);
+ReactDOM.render(React.createElement(Container), DOM_CONTAINER);
