@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Rooms from './Rooms';
 import List from './List';
+import Profile from './Profile';
 import './App.css';
 
 export default function App() {
@@ -23,9 +24,12 @@ export default function App() {
             <br />
             <Link to="/rooms">방 소개</Link>
             <br />
+            <Link to="/profile">유저 정보</Link>
+            <br />
             <Route exact path="/" component={Home} />
             <Route path="/todo" component={List} />
             <Route path="/rooms" component={Rooms} />
+            <Route path="/profile" component={Profile} />
           </div>
         </BrowserRouter>
       </header>
