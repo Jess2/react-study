@@ -13,7 +13,7 @@
 - [cra-test](https://github.com/JESS2/react-study/tree/master/cra-test) : `create-react-app` 을 사용한 다양한 기능
 
 ## Other React Project Repositories
-- [jess2-page-react-practice](https://github.com/JESS2/jess2-page-react-practice)
+- [jess2-page-react-practice](https://github.com/JESS2/jess2-page-react-practice) : React.js를 이용하여 구현한 간단한 개인 페이지
 
 ## Build Setup
 ```bash
