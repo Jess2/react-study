@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useUser from './useUser';
 
 export default function Profile() {
-  const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(0);
-
-  useEffect(() => {
-    getUserApi(userId).then(data => setUser(data));
-  }, [userId]);
+  const user = useUser(userId);
 
   return (
     <div>
@@ -20,15 +17,4 @@ export default function Profile() {
       )}
     </div>
   );
-}
-
-const USER1 = { name: 'mike', age: 23 };
-const USER2 = { name: 'jane', age: 31 };
-
-function getUserApi(userId) {
-  return new Promise(result => {
-    setTimeout(() => {
-      result(userId % 2 ? USER1 : USER2);
-    }, 500);
-  });
 }
