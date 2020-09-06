@@ -5,9 +5,9 @@ import { getInitialTileList } from "../util/tile";
 import useMoveTitle from "../hook/useMoveTitle";
 import Tile from "./Tile";
 
-export default function Game() {
+export default function Game({ setScore }) {
   const [tileList, setTileList] = useState(getInitialTileList());
-  useMoveTitle({tileList, setTileList});
+  useMoveTitle({tileList, setTileList, setScore });
 
   return (
     <div className="game-container">

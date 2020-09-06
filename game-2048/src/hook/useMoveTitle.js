@@ -2,9 +2,14 @@ import { useEffect } from "react";
 import { addKeyObserver, removeKeyObserver } from "../util/keyboard";
 import { moveTile, makeTile } from "../util/tile";
 
-export default function useMoveTitle({ tileList, setTileList }) {
+export default function useMoveTitle({ tileList, setTileList, setScore }) {
   function moveAndAdd({x, y}) {
     const newTileList = moveTile({ tileList, x, y }); // 타일을 움직여서 리스트를 새로 만든다.
+    const score = newTileList.reduce(
+      (acc, item) => (item.isMerged ? acc + item.value : acc),
+      0,
+    );
+    setScore(v => v + score);
     const newTile = makeTile(newTileList);
     newTile.isNew = true;
     newTileList.push(newTile);
