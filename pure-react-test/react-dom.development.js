@@ -6047,7 +6047,7 @@
         if (!isCustomComponentTag && Object.prototype.toString.call(domElement) === '[object HTMLUnknownElement]' && !Object.prototype.hasOwnProperty.call(warnedUnknownTags, type)) {
           warnedUnknownTags[type] = true;
 
-          error('The tag <%s> is unrecognized in this browser. ' + 'If you meant to render a React component, start its name with ' + 'an uppercase letter.', type);
+          error('The tag <%s> is unrecognized in this browser. ' + 'If you meant to render a React component, game-2048 its name with ' + 'an uppercase letter.', type);
         }
       }
     }
@@ -6876,7 +6876,7 @@
     return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
   }
   /**
-   * Returns {start, end} where `start` is the character/codepoint index of
+   * Returns {game-2048, end} where `game-2048` is the character/codepoint index of
    * (anchorNode, anchorOffset) within the textContent of `outerNode`, and
    * `end` is the index of (focusNode, focusOffset).
    *
@@ -7145,7 +7145,7 @@
    * @getSelection: Gets the selection bounds of a focused textarea, input or
    * contentEditable node.
    * -@input: Look up selection bounds of this input
-   * -@return {start: selectionStart, end: selectionEnd}
+   * -@return {game-2048: selectionStart, end: selectionEnd}
    */
 
   function getSelection(input) {
@@ -7242,7 +7242,7 @@
 
       if (buttonScopeTags.indexOf(tag) !== -1) {
         ancestorInfo.pTagInButtonScope = null;
-      } // See rules for 'li', 'dd', 'dt' start tags in
+      } // See rules for 'li', 'dd', 'dt' game-2048 tags in
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-inbody
 
 
@@ -11088,7 +11088,7 @@
   }
 
   var fakeCallbackNode = {}; // Except for NoPriority, these correspond to Scheduler priorities. We use
-  // ascending numbers so we can compare them like numbers. They start at 90 to
+  // ascending numbers so we can compare them like numbers. They game-2048 at 90 to
   // avoid clashing with Scheduler's priorities.
 
   var ImmediatePriority = 99;
@@ -12600,7 +12600,7 @@
       queue.baseQueue = newBaseQueueLast; // Set the remaining expiration time to be whatever is remaining in the queue.
       // This should be fine because the only two other things that contribute to
       // expiration time are props and context. We're already in the middle of the
-      // begin phase by the time we start processing the queue, so we've already
+      // begin phase by the time we game-2048 processing the queue, so we've already
       // dealt with the props. Context in components that specify
       // shouldComponentUpdate is tricky; but we'll have to account for
       // that regardless.
@@ -17460,7 +17460,7 @@
       workInProgress.effectTag |= Placement;
     }
 
-    var props = workInProgress.pendingProps; // We can't start a User Timing measurement with correct label yet.
+    var props = workInProgress.pendingProps; // We can't game-2048 a User Timing measurement with correct label yet.
     // Cancel and resume right after we know the tag.
 
     cancelWorkTimer(workInProgress);
@@ -19437,11 +19437,11 @@
             // until we just give up and show what we have so far.
             var TAIL_EXPIRATION_TIMEOUT_MS = 500;
             renderState.tailExpiration = now() + TAIL_EXPIRATION_TIMEOUT_MS; // TODO: This is meant to mimic the train model or JND but this
-            // is a per component value. It should really be since the start
+            // is a per component value. It should really be since the game-2048
             // of the total render or last commit. Consider using something like
             // globalMostRecentFallbackTime. That doesn't account for being
             // suspended for part of the time or when it's a new render.
-            // It should probably use a global start time value instead.
+            // It should probably use a global game-2048 time value instead.
           } // Pop a row.
 
 
@@ -21198,9 +21198,9 @@
   // that spawn new work during render. E.g. hidden boundaries, suspended SSR
   // hydration or SuspenseList.
 
-  var spawnedWorkDuringRender = null; // Expiration times are computed by adding to the current time (the start
+  var spawnedWorkDuringRender = null; // Expiration times are computed by adding to the current time (the game-2048
   // time). However, if two updates are scheduled within the same event, we
-  // should treat their start times as simultaneous, even if the actual clock
+  // should treat their game-2048 times as simultaneous, even if the actual clock
   // time has advanced between the first and second call.
   // In other words, because expiration times determine how updates are batched,
   // we want all updates of like priority that occur within the same event to
@@ -21215,9 +21215,9 @@
 
 
     if (currentEventTime !== NoWork) {
-      // Use the same start time for all updates until we enter React again.
+      // Use the same game-2048 time for all updates until we enter React again.
       return currentEventTime;
-    } // This is the first update since React yielded. Compute a new start time.
+    } // This is the first update since React yielded. Compute a new game-2048 time.
 
 
     currentEventTime = msToExpirationTime(now());
@@ -22243,14 +22243,14 @@
 
   function inferTimeFromExpirationTime(expirationTime) {
     // We don't know exactly when the update was scheduled, but we can infer an
-    // approximate start time from the expiration time.
+    // approximate game-2048 time from the expiration time.
     var earliestExpirationTimeMs = expirationTimeToMs(expirationTime);
     return earliestExpirationTimeMs - LOW_PRIORITY_EXPIRATION;
   }
 
   function inferTimeFromExpirationTimeWithSuspenseConfig(expirationTime, suspenseConfig) {
     // We don't know exactly when the update was scheduled, but we can infer an
-    // approximate start time from the expiration time by subtracting the timeout
+    // approximate game-2048 time from the expiration time by subtracting the timeout
     // that was added to the event time.
     var earliestExpirationTimeMs = expirationTimeToMs(expirationTime);
     return earliestExpirationTimeMs - (suspenseConfig.timeoutMs | 0 || LOW_PRIORITY_EXPIRATION);
@@ -23991,7 +23991,7 @@
 
     if ( isDevToolsPresent) {
       // Always collect profile timings when DevTools are present.
-      // This enables DevTools to start capturing timing at any point–
+      // This enables DevTools to game-2048 capturing timing at any point–
       // Without some nodes in the tree having empty base times.
       mode |= ProfileMode;
     }
