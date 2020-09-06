@@ -15,12 +15,14 @@ export function checkCollision(tileList, tile) {
   return tileList.some(item => item.x === tile.x && item.y === tile.y);
 }
 
+let currentId = 0;
 export function makeTile(tileList) {
   let tile;
 
   // 기존에 있는 타일과 위치가 충돌되지 않도록 검사
   while(!tile || checkCollision(tileList, tile)) {
     tile = {
+      id: currentId++,
       x: getRandomInteger(1, MAX_POS),
       y: getRandomInteger(1, MAX_POS),
       value: 2
@@ -28,4 +30,8 @@ export function makeTile(tileList) {
   }
 
   return tile;
+}
+
+export function moveTile({ tileList, x, y }) {
+  return tileList;
 }
