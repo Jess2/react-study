@@ -6,6 +6,7 @@ export default function useMoveTitle({ tileList, setTileList }) {
   function moveAndAdd({x, y}) {
     const newTileList = moveTile({ tileList, x, y }); // 타일을 움직여서 리스트를 새로 만든다.
     const newTile = makeTile(newTileList);
+    newTile.isNew = true;
     newTileList.push(newTile);
     setTileList(newTileList);
   }
